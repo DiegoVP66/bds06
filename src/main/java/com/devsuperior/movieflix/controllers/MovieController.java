@@ -13,13 +13,14 @@ import com.devsuperior.movieflix.services.MovieService;
 @RestController
 @RequestMapping(value = "/movies")
 public class MovieController {
-	
+
 	@Autowired
 	private MovieService service;
-	
+
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<MovieDTO> findById(@PathVariable Long id){
+	public ResponseEntity<MovieDTO> findById(@PathVariable Long id) {
 		MovieDTO dto = service.findById(id);
 		return ResponseEntity.ok().body(dto);
 	}
+
 }

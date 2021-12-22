@@ -7,6 +7,5 @@ import com.devsuperior.movieflix.entities.Movie;
 
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
-	
-	
+
 }
