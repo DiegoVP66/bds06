@@ -22,7 +22,7 @@ public class ReviewController {
 
 	@Autowired
 	private ReviewService service;
-	
+
 	@PreAuthorize("hasAnyRole('MEMBER')")
 	@PostMapping
 	public ResponseEntity<ReviewDTO> insert(@RequestBody @Valid ReviewDTO dto) {
@@ -30,4 +30,5 @@ public class ReviewController {
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri();
 		return ResponseEntity.created(uri).body(dto);
 	}
+
 }
